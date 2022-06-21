@@ -4,6 +4,7 @@ import 'package:expandable/expandable.dart';
 import 'package:flutter/cupertino.dart';
 
 import 'package:flutter/material.dart';
+import 'package:ud/finance.dart';
 import 'package:ud/navigation_Drawer.dart';
 
 
@@ -118,7 +119,12 @@ color: Colors.red,
                                          Ink.image(
                                            image: NetworkImage('https://mpng.subpng.com/20191128/eov/transparent-profit-icon-accounting-icon-business-and-finance-i-5ddfb8a51fe521.7090329215749428851307.jpg'),
                                            child: InkWell(
-                                             onTap: (){},
+                                             onTap: (){
+                                               Navigator.push(
+                                                 context,
+                                                 MaterialPageRoute(builder: (context) => finance()),
+                                               );
+                                             },
                                            ),
                                            height: 100,
                                            width: 60,
@@ -374,6 +380,10 @@ color: Colors.red,
           ScrollOnExpand(
 
               child:ExpandablePanel(
+                  theme: ExpandableThemeData(
+                      expandIcon: Icons.arrow_downward_sharp       ,iconColor: Colors.red,
+                      collapseIcon:Icons.arrow_upward_outlined,iconSize: 35,iconRotationAngle: 90
+                  ),
               header:Text(
                 title,
                 style: TextStyle(

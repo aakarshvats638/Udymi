@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ud/Help.dart';
 
     class NavBar extends StatelessWidget {  @override
   Widget build(BuildContext context) {
@@ -41,7 +42,12 @@ import 'package:flutter/material.dart';
           child: ListTile(
             leading:Icon(Icons.live_help_sharp,color: Colors.red,),
             title: Text('Help',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 18),),
-
+onTap: (){
+  Navigator.push(
+    context,
+    MaterialPageRoute(builder: (context) => const HelpScreen()),
+  );
+},
           ),
         ),
           Container(
